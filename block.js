@@ -1,5 +1,3 @@
-var canvas_height = 500;
-var canvas_width = 500;
 var block_width = 50;
 var block_spacing = 50
 var num_of_blocks = canvas_width/block_spacing;
