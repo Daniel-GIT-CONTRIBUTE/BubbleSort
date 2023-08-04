@@ -7,7 +7,7 @@ function setup() {
   createCanvas(canvas_height, canvas_width);
   b = new block();
   create_num_set();
-  frameRate(0.5);
+  frameRate(1);
 }
 
 
