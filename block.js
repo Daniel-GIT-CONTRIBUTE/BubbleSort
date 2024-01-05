@@ -12,7 +12,8 @@ function create_num_set(){
       my_array.push(Math.floor(Math.random()*(canvas_height-50))+50);
     }
 }
-  
+ 
+
 
 function block(){
   this.x = 0;
@@ -26,28 +27,35 @@ function block(){
             endOfArray -= 1;
         };
         if(my_array[i] > my_array[i+1]){
-            showIndividualBlocks(i)
-            showIndividualBlocks(i+1)
-            // await delay(1000);
+            showIndividualBlocks(i);
+            showIndividualBlocks(i+1);
             j = my_array[i];
             my_array[i] = my_array[i+1];
             my_array[i+1] = j;
             i ++;
         } else{
-            showIndividualBlocks(i)
-            showIndividualBlocks(i+1)
-            // await delay(1000);
+            showIndividualBlocks(i);
+            showIndividualBlocks(i+1);
             i ++;
-            
         };
     }
     }
-    
+
+    this.reset = function () {
+      i = 0;
+      endOfArray = num_of_blocks - 1;
+      my_array.length = 0; // Clear the array
+      for (let i = 0; i < num_of_blocks; i++) {
+        my_array.push(Math.floor(Math.random() * (canvas_height - 50)) + 50);
+        showBlocks(i);
+      }
+    };
+
 
   this.show = function(x, y, w, h, color ="rgb(255)" ) {
-    fill(color);
-    rect(x,y,w,h);
-  }
+      fill(color);
+      rect(x,y,w,h);
+  }  
 }  
 
 function showIndividualBlocks(index){
@@ -68,7 +76,6 @@ function delay(ms) {
 }
 
 async function bubbleSort(){
-    // await delay(3000);
     for(let j = 0; j < num_of_blocks - 1; j++){
         for(let i = 0; i < num_of_blocks - 1; i++){
             let input = prompt("enter");
@@ -77,11 +84,7 @@ async function bubbleSort(){
                 j = my_array[i];
                 my_array[i] = my_array[i+1];
                 my_array[i+1] = j;
-
             }
-            //   for(let i=0; i< 5; i++){
-            //     showTextVertically(my_array[i], ((i)*block_spacing)+26, 30);
-            // }
             }
     }
 }
