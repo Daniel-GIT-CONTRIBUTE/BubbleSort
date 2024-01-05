@@ -11,9 +11,7 @@ function create_num_set(){
     for(let i = 0; i < num_of_blocks; i++){
       my_array.push(Math.floor(Math.random()*(canvas_height-50))+50);
     }
-}
- 
-
+} 
 
 function block(){
   this.x = 0;
@@ -34,10 +32,8 @@ function block(){
             my_array[i+1] = j;
             i ++;
         } else{
-            
             showIndividualBlocks(i);
             showIndividualBlocks(i+1);
-            await delay(300);
             i ++;
         };
     }

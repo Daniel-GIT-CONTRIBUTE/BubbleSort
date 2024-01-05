@@ -23,9 +23,6 @@ function sortButtonSetup(){
             if(!sortingInProgress){return};
             b.update();
             setTimeout(runTwentyTimes, 200);
-            if(b.checkIfDone() == true){
-                return;
-            }
         }
         runTwentyTimes(); 
     });
